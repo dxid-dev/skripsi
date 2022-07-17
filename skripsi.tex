@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{report}
+\renewcommand{\baselinestretch}{2.0}
+
+\usepackage[T1]{fontenc}
+\usepackage{times,newtxmath,newtxtext}
+
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[tableposition=top]{caption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{overpic}
+\usepackage{tikz}
+
+\setlength{\parindent}{1cm}
+
+\captionsetup[table]{labelsep=space}
+\captionsetup[figure]{labelsep=space}
+
+\usetikzlibrary{shapes.geometric, arrows}
+\definecolor{blu}{RGB}{135,206,250}
+\definecolor{ore}{RGB}{255,140,0}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=4cm, minimum height=1cm, text centered, text width=5cm, draw=black, fill=blu]
+\tikzstyle{process2} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=blu]
+\tikzstyle{decision} = [diamond, minimum width=2.2cm, minimum height=0.3cm, text centered, text width=1.1cm, draw=black, fill=orange!40]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\usepackage{gensymb}
+\usepackage{notoccite}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    linkbordercolor=red
+}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+
+\title{major}
+\author{David}
+\date{Juli 2022}
+
+\renewcommand{\chaptername}{BAB }
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\listtablename}{DAFTAR TABEL}
+\renewcommand{\listfigurename}{DAFTAR GAMBAR}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}.}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}.}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+
+\usepackage{graphicx}
+\usepackage[a4paper,top=40mm,bottom=30mm,left=40mm,right=30mm]{geometry}
+
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+\usepackage{sectsty}
+
+\chapternumberfont{\Large} 
+\chaptertitlefont{\Large}
+\pagenumbering{roman}
+\sectionfont{\normalsize}
+\subsectionfont{\normalsize}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\titleformat{\chapter}[display]
+	{\normalfont\large\bfseries\centering}{\chaptertitlename \thechapter \centering}{-10pt}{\large}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\begin{document}
+\newgeometry{a4paper,top=4cm,bottom=3cm,left=4cm,right=3cm}
+
+\input{Header/sampul}
+\newpage
+\input{Header/pengesahan}
+
+\setstretch{2}
+\input{Header/prakata}
+\input{Header/abstrak}
+\input{Header/abstract}
+\input{Header/d_isi}
+\input{Header/d_gambar}
+\input{Header/d_tabel}
+
+\input{Isi/Pendahuluan}
+\input{Isi/Tinjauan Pustaka}
+\input{Isi/Metode Penelitian}
+\input{Isi/Hasil dan Pembahasan}
+\input{Isi/Kesimpulan dan Saran}
+
+\bibliographystyle{ieeetr}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+
+\input{Isi/Lampiran}
+\end{document}
